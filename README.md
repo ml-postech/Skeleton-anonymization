@@ -42,7 +42,8 @@ python main.py --config ./config/train_adver_unet.yaml
 
 ## Pre-trained Models
 
-- We provide two pre-trained models in save_model directory
+We provide two pre-trained model with NTU60. You can download pretrained models here:
+- [Google Drive](https://drive.google.com/drive/folders/1R7fooJbVv2an42Xdt2Phvi8I3GTB5CxG?usp=sharing)
 
 Model|Anonymizer network|Action acc.|Re-iden. acc.
 -|-|-|-
