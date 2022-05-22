@@ -45,7 +45,7 @@ python main.py --config ./config/train_adver_unet.yaml
 We provide two pre-trained model with NTU60. You can download pretrained models here:
 - [Google Drive](https://drive.google.com/drive/folders/1R7fooJbVv2an42Xdt2Phvi8I3GTB5CxG?usp=sharing)
 
-Model|Anonymizer network|Action acc.|Re-iden. acc.
+Model|Anonymizer network|Re-iden. acc.|Action acc.
 -|-|-|-
 ./save_models/pretrained_resnet.pt|ResNet|4.20%|91.75%
 ./save_models/pretrained_unet.pt|UNet|5.70%|91.45%
