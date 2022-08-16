@@ -53,8 +53,8 @@ Model|Anonymizer network|Re-iden. acc.|Action acc.
 To test the pre-trained models given above, run this command:
 
 ```train
-python main.py --config ./config/train_adver_resnet_test.yaml
-python main.py --config ./config/train_adver_unet_test.yaml
+python main.py --config ./config/train_adver_resnet.yaml
+python main.py --config ./config/train_adver_unet.yaml
 ```
 
 

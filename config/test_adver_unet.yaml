@@ -46,7 +46,7 @@ test_privacy:
 
 pretrained_action: save_models/ntu_ShiftGCN_joint_xview.pt
 pretrained_privacy: save_models/ntu_experiment.pt
-pretrained_privacy_test: save_models/ntu_experiment.pt
+pretrained_privacy_test: save_models/pretrained_ntu.pt
 
 wandb: "project_name"
 dataset: "user"
