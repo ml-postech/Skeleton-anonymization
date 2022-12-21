@@ -57,6 +57,8 @@ python main.py --config ./config/train_adver_resnet.yaml
 python main.py --config ./config/train_adver_unet.yaml
 ```
 
+Also, we provide more privacy pre-trained models for test model. You can see at `/save_models/ntu_pretrained_x`.
+
 
 ## Acknowledgements
 This code is based on [Shift-GCN](https://github.com/kchengiva/Shift-GCN). Also, we use [U-Net](https://github.com/milesial/Pytorch-UNet) for anonymizer network. Thanks to the original authors!☺️

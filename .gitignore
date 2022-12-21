@@ -193,15 +193,14 @@ config/train_adver_unet_gender.yaml
 config/train_adver_resnet_gender.yaml
 etri_visualize.py
 
-#ignore all files in save_models except pre-trained model
-!save_models/
-save_models/*
-!save_models/ntu_ShiftGCN_joint_xview.pt
-!save_models/ntu_experiment.pt
+# #ignore all files in save_models except pre-trained model
+# !save_models/
+# save_models/*
+# !save_models/ntu_ShiftGCN_joint_xview.pt
+# !save_models/ntu_experiment.pt
 # !save_models/pretrained_resnet.pt
 # !save_models/pretrained_unet.pt
 
-run.sh
 visualize.py
 ntu_visualize.py
 test.out
