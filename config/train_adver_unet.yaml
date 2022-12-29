@@ -45,13 +45,13 @@ privacy_model_args:
 
 #optim
 weight_decay: 0.0001
-base_lr: 0.01
+base_lr: 0.001
 
 
 step: [60, 80, 100]
 
 # training
-device: [4,5,6]
+device: [4,5,6,7]
 only_train_epoch: 1
 batch_size: 64
 test_batch_size: 64
@@ -71,8 +71,8 @@ pretrained_action: save_models/ntu_ShiftGCN_joint_xview.pt
 pretrained_privacy: save_models/ntu_experiment.pt
 pretrained_privacy_test: save_models/ntu_experiment.pt
 
-alpha: 0.3 # privacy loss
-beta: 2 # recon loss
+alpha: 3 # privacy loss
+beta: 10 # recon loss
 
 wandb: "shift_anonymization_ntu"
 entity: "saemi"

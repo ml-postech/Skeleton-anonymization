@@ -13,12 +13,9 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
-dist/
 downloads/
 eggs/
-.eggs/
 lib/
 lib64/
 parts/
@@ -26,9 +23,7 @@ sdist/
 var/
 wheels/
 share/python-wheels/
-*.egg-info/
 .installed.cfg
-*.egg
 MANIFEST
 
 # PyInstaller
@@ -198,10 +193,15 @@ etri_visualize.py
 save_models/*
 !save_models/ntu_ShiftGCN_joint_xview.pt
 !save_models/ntu_experiment.pt
+!save_models/ntu_pretrained_0.pt
+!save_models/ntu_pretrained_1.pt
+!save_models/ntu_pretrained_2.pt
+!save_models/ntu_pretrained_3.pt
+!save_models/ntu_pretrained_4.pt
+
 # !save_models/pretrained_resnet.pt
 # !save_models/pretrained_unet.pt
 
-run.sh
 visualize.py
 ntu_visualize.py
 test.out

@@ -368,7 +368,7 @@ class Processor():
 
         self.print_log("Loading models for evaluation")
         self.load_eval_action_model(self.arg.pretrained_action)
-        self.load_eval_privacy_model(self.arg.pretrained_privacy)
+        self.load_eval_privacy_model(self.arg.pretrained_privacy_test)
 
         self.loss = nn.CrossEntropyLoss().cuda(output_device)
 
@@ -698,6 +698,11 @@ class Processor():
 
                     
                     anonymized = self.anonymizer(data)
+                    #anonymized = np.load('/data_seoul/saemi/BASAR-Black-box-Attack-on-Skeletal-Action-Recognition/results/ntu/untargeted/0705_184001/target_samples.npy') 
+                    #anonymized = data + (0.001**0.5)*torch.randn(664, 25, 1)
+                    #anonymized = torch.Tensor(anonymized)
+                    #anonymized = data
+
                     action = self.eval_action_model(anonymized)
 
                     loss = action_classification_loss(action, action_label)
@@ -761,6 +766,10 @@ class Processor():
                     privacy_label = privacy_label.long().cuda(self.output_device)
                 
                     anonymized = self.anonymizer(data)
+                    #anonymized = data + (0.001**0.5)*torch.randn(664, 25, 1)
+                    #anonymized = np.load('/data_seoul/saemi/BASAR-Black-box-Attack-on-Skeletal-Action-Recognition/results/ntu/untargeted/0705_184001/target_samples.npy') 
+                    #anonymized = torch.Tensor(anonymized)
+                    #anonymized = data
                     privacy = self.eval_privacy_model(anonymized)
                         
                     loss = entropy(privacy)
@@ -768,6 +777,7 @@ class Processor():
                     privacy_batches.append(privacy.data.cpu().numpy())
 
                     step += 1
+                
         
             score = np.concatenate(privacy_batches)
 
@@ -871,7 +881,7 @@ if __name__ == '__main__':
         parser.set_defaults(**default_arg)
 
     arg = parser.parse_args()
-    init_seed(0)
+    init_seed(0) 
 
     #wandb initialization
     wandb.init(project=arg.wandb, entity=arg.entity)

@@ -1,0 +1,55 @@
+Experiment_name: Skeleton_anonymization_unet_test
+
+# feeder
+feeder: feeders.feeder_anonymization.Feeder
+test_feeder_args:
+  debug: True
+  data_path: ./data/etri/data_test.npy
+  privacy_label_path: ./data/etri/genders_test.pkl
+  action_label_path: ./data/etri/actions_test.pkl
+
+# model
+anonymizer_model: model.unet_model.UNet
+model_args:
+  n_channels: 3
+  n_classes: 3
+  bilinear: False
+
+action_model: model.shift_gcn.Model
+action_model_args:
+  num_class: 55
+  num_point: 25
+  num_person: 1
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+privacy_model: model.shift_gcn.Model
+privacy_model_args:
+  num_class: 2
+  num_point: 25
+  num_person: 1
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+phase: 'test'
+device: [0,1,2,3]
+test_batch_size: 64
+nesterov: True
+
+test_action:
+  batch_size: 64
+
+test_privacy:
+  batch_size: 64
+
+pretrained_action: save_models/pretrained_action_etri_shift.pt
+pretrained_privacy: save_models/etri_experiment.pt
+pretrained_privacy_test: save_models/etri_experiment.pt
+
+wandb: "project_name"
+entity: "saemi"
+dataset: "user"
+
+weights:  save_models/pretrained_unet.pt

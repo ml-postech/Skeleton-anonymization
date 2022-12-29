@@ -1,4 +1,4 @@
-Experiment_name: Skeleton_anonymization_resnet_test
+Experiment_name: Skeleton_anonymization_unet_test
 
 # feeder
 feeder: feeders.feeder_anonymization.Feeder
@@ -9,13 +9,11 @@ test_feeder_args:
   action_label_path: ./data/ntu/xview/val_label.pkl
 
 # model
-anonymizer_model: model.anonymization_res.Anonymizer
+anonymizer_model: model.unet_model.UNet
 model_args:
-  num_point: 25
-  num_person: 2
-  graph: graph.ntu_rgb_d.Graph
-  graph_args:
-    labeling_mode: 'spatial'
+  n_channels: 3
+  n_classes: 3
+  bilinear: False
 
 action_model: model.shift_gcn.Model
 action_model_args:
@@ -35,7 +33,6 @@ privacy_model_args:
   graph_args:
     labeling_mode: 'spatial'
 
-
 phase: 'test'
 device: [0,1,2,3]
 test_batch_size: 64
@@ -49,9 +46,10 @@ test_privacy:
 
 pretrained_action: save_models/ntu_ShiftGCN_joint_xview.pt
 pretrained_privacy: save_models/ntu_experiment.pt
-pretrained_privacy_test: save_models/ntu_experiment.pt
+pretrained_privacy_test: save_models/ntu_pretrained_0.pt
 
 wandb: "project_name"
+entity: "saemi"
 dataset: "user"
 
-weights:  save_models/pretrained_resnet.pt
+weights:  save_models/pretrained_unet.pt
