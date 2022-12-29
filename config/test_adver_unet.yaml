@@ -49,7 +49,6 @@ pretrained_privacy: save_models/ntu_experiment.pt
 pretrained_privacy_test: save_models/ntu_pretrained_0.pt
 
 wandb: "project_name"
-entity: "saemi"
-dataset: "user"
+entity: "user"
 
 weights:  save_models/pretrained_unet.pt

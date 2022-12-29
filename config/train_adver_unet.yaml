@@ -74,7 +74,7 @@ pretrained_privacy_test: save_models/ntu_experiment.pt
 alpha: 3 # privacy loss
 beta: 10 # recon loss
 
-wandb: "shift_anonymization_ntu"
-entity: "saemi"
+wandb: "project_name"
+entity: "user"
 
 dataset: "ntu60"

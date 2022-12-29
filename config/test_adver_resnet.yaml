@@ -4,8 +4,8 @@ Experiment_name: Skeleton_anonymization_resnet_test
 feeder: feeders.feeder_anonymization.Feeder
 test_feeder_args:
   debug: True
-  data_path: ./data/ntu/xview/val_data_joint.npy #/data_seoul/saemi/Understanding-the-Robustness-of-Skeleton-based-Action-Recognition-under-Adversarial-Attack/code/ad_motions.npy
-  privacy_label_path:  ./data/ntu/xview/val_label_privacy.pkl
+	data_path: ./data/ntu/xview/val_data_joint.npy
+  privacy_label_path: ./data/ntu/xview/val_label_privacy.pkl
   action_label_path: ./data/ntu/xview/val_label.pkl
 
 # model
@@ -52,6 +52,6 @@ pretrained_privacy: save_models/ntu_experiment.pt
 pretrained_privacy_test: save_models/ntu_pretrained_0.pt
 
 wandb: "project_name"
-dataset: "user"
+entity: "user"
 
 weights:  save_models/pretrained_resnet.pt

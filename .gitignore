@@ -185,10 +185,10 @@ visualization/
 
 # ignore all files related to etri dataset
 config/train_adver_unet_gender.yaml
+config/train_adver_unet_gender_test.yaml
 config/train_adver_resnet_gender.yaml
 etri_visualize.py
 
-<<<<<<< HEAD
 #ignore all files in save_models except pre-trained model
 !save_models/
 save_models/*
@@ -200,13 +200,6 @@ save_models/*
 !save_models/ntu_pretrained_3.pt
 !save_models/ntu_pretrained_4.pt
 
-=======
-# #ignore all files in save_models except pre-trained model
-# !save_models/
-# save_models/*
-# !save_models/ntu_ShiftGCN_joint_xview.pt
-# !save_models/ntu_experiment.pt
->>>>>>> bafce3d0533625fb8a2c3dff3dcb9f782fb6d1ad
 # !save_models/pretrained_resnet.pt
 # !save_models/pretrained_unet.pt
 

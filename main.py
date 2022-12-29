@@ -698,11 +698,6 @@ class Processor():
 
                     
                     anonymized = self.anonymizer(data)
-                    #anonymized = np.load('/data_seoul/saemi/BASAR-Black-box-Attack-on-Skeletal-Action-Recognition/results/ntu/untargeted/0705_184001/target_samples.npy') 
-                    #anonymized = data + (0.001**0.5)*torch.randn(664, 25, 1)
-                    #anonymized = torch.Tensor(anonymized)
-                    #anonymized = data
-
                     action = self.eval_action_model(anonymized)
 
                     loss = action_classification_loss(action, action_label)
@@ -766,10 +761,6 @@ class Processor():
                     privacy_label = privacy_label.long().cuda(self.output_device)
                 
                     anonymized = self.anonymizer(data)
-                    #anonymized = data + (0.001**0.5)*torch.randn(664, 25, 1)
-                    #anonymized = np.load('/data_seoul/saemi/BASAR-Black-box-Attack-on-Skeletal-Action-Recognition/results/ntu/untargeted/0705_184001/target_samples.npy') 
-                    #anonymized = torch.Tensor(anonymized)
-                    #anonymized = data
                     privacy = self.eval_privacy_model(anonymized)
                         
                     loss = entropy(privacy)
